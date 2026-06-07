@@ -1,0 +1,6 @@
+body{margin:0;font-family:Arial,sans-serif;background:#071427;color:white}
+section{padding:80px 8%}
+.hero,.cta{background:linear-gradient(135deg,#06122b,#0a2248)}
+h1{font-size:64px;max-width:900px}
+h2{font-size:42px}
+.product,.solutions,.about,.workflow,.footer{border-top:1px solid rgba(255,255,255,.08)}
