@@ -31,7 +31,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[var(--cyan)] flex-shrink-0" />
-                <a href="mailto:info@probea.in" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="mailto:info@probea.in" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   info@probea.in
                 </a>
               </div>
@@ -39,9 +39,9 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[var(--cyan)] flex-shrink-0" />
                 <div className="text-sm text-gray-400">
-                  <a href="tel:+919582220608" className="hover:text-[var(--cyan)] transition-colors">+91-9582220608</a>
+                  <a href="tel:+919582220608" className="hover:text-[var(--cyan)] transition-colors cursor-pointer">+91-9582220608</a>
                   {' • '}
-                  <a href="tel:+919731555113" className="hover:text-[var(--cyan)] transition-colors">+91-97315-55113</a>
+                  <a href="tel:+919731555113" className="hover:text-[var(--cyan)] transition-colors cursor-pointer">+91-97315-55113</a>
                 </div>
               </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors"
+                  className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer"
                 >
                   Follow us on LinkedIn
                 </a>
@@ -64,17 +64,17 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Product</h3>
             <ul className="space-y-2.5">
               <li>
-                <a href="/#solutions" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="/#solutions" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   Solutions
                 </a>
               </li>
               <li>
-                <a href="/#technology" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="/#technology" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   Technology
                 </a>
               </li>
               <li>
-                <a href="/#integrations" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="/#integrations" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   Integrations
                 </a>
               </li>
@@ -86,22 +86,22 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/about" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <Link to="/about" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   About Us
                 </Link>
               </li>
               <li>
-                <a href="/#contact" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="/#contact" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="#privacy" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#terms" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors">
+                <a href="#terms" className="text-sm text-gray-400 hover:text-[var(--cyan)] transition-colors cursor-pointer">
                   Terms of Service
                 </a>
               </li>

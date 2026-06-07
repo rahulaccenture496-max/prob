@@ -15,25 +15,25 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/#solutions" className="text-gray-300 hover:text-[var(--cyan)] transition-colors">
+            <a href="/#solutions" className="text-gray-300 hover:text-[var(--cyan)] transition-colors duration-200 cursor-pointer">
               Solutions
             </a>
-            <a href="/#technology" className="text-gray-300 hover:text-[var(--cyan)] transition-colors">
+            <a href="/#technology" className="text-gray-300 hover:text-[var(--cyan)] transition-colors duration-200 cursor-pointer">
               Technology
             </a>
-            <Link to="/about" className="text-gray-300 hover:text-[var(--cyan)] transition-colors">
+            <Link to="/about" className="text-gray-300 hover:text-[var(--cyan)] transition-colors duration-200 cursor-pointer">
               About
             </Link>
-            <a href="/#contact" className="text-gray-300 hover:text-[var(--cyan)] transition-colors">
+            <a href="/#contact" className="text-gray-300 hover:text-[var(--cyan)] transition-colors duration-200 cursor-pointer">
               Contact
             </a>
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href="https://probea.in/login" className="text-gray-300 hover:text-white transition-colors duration-200">
+            <a href="https://probea.in/login" className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
               Sign in
             </a>
-            <a href="/#get-started" className="bg-[#4DD9D9] text-[#0B1C2E] px-6 py-2 rounded-lg hover:bg-[#6FE5E5] transition-all duration-200 font-semibold">
+            <a href="/#get-started" className="bg-[#4DD9D9] text-[#0B1C2E] px-6 py-2 rounded-lg hover:bg-[#6FE5E5] transition-all duration-200 cursor-pointer">
               Request Demo
             </a>
           </div>

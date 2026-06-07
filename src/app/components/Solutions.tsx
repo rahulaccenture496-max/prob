@@ -4,13 +4,18 @@ import {
   FileText,
   CheckCircle2
 } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Solutions() {
+  const card1 = useScrollAnimation();
+  const card2 = useScrollAnimation();
+  const card3 = useScrollAnimation();
+
   return (
-    <section id="solutions" className="py-20 bg-gradient-to-b from-[var(--cyan)]/5 to-white">
+    <section id="solutions" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
-          <div className="inline-block bg-[var(--cyan)]/10 border border-[var(--cyan)]/30 text-[var(--cyan)] text-sm font-semibold mb-4 uppercase tracking-wide px-4 py-2 rounded-full">
+          <div className="inline-block bg-[#0B1C2E] text-[var(--cyan)] text-sm font-semibold mb-4 uppercase tracking-wide px-4 py-2 rounded-full">
             SOLUTIONS
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -22,7 +27,14 @@ export default function Solutions() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white rounded-xl p-8 shadow-lg border-b-4 border-[var(--cyan)]">
+          <div
+            ref={card1.elementRef}
+            className={`bg-white rounded-xl p-8 shadow-lg border-b-4 border-[var(--cyan)] transition-all duration-700 ${
+              card1.isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             <div className="w-16 h-16 bg-[var(--cyan)]/10 rounded-xl flex items-center justify-center mb-6">
               <Activity className="w-8 h-8 text-[var(--cyan)]" />
             </div>
@@ -76,9 +88,16 @@ export default function Solutions() {
             </ul>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg border-b-4 border-[var(--navy)]">
-            <div className="w-16 h-16 bg-[var(--navy)]/10 rounded-xl flex items-center justify-center mb-6">
-              <Heart className="w-8 h-8 text-[var(--navy)]" />
+          <div
+            ref={card2.elementRef}
+            className={`bg-white rounded-xl p-8 shadow-lg border-b-4 border-[var(--cyan)] transition-all duration-700 delay-150 ${
+              card2.isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <div className="w-16 h-16 bg-[var(--cyan)]/10 rounded-xl flex items-center justify-center mb-6">
+              <Heart className="w-8 h-8 text-[var(--cyan)]" />
             </div>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Critical Care Intelligence</h3>
@@ -88,29 +107,36 @@ export default function Solutions() {
 
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="w-5 h-5 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[var(--cyan)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">ED Triage & Risk Scoring</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="w-5 h-5 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[var(--cyan)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Early Warning & Deterioration Detection</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="w-5 h-5 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[var(--cyan)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">eICU Monitoring & Analytics</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="w-5 h-5 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[var(--cyan)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Care Team Alerts</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="w-5 h-5 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[var(--cyan)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Trend Analysis & Predictive Insights</span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg border-b-4 border-[var(--cyan)]">
+          <div
+            ref={card3.elementRef}
+            className={`bg-white rounded-xl p-8 shadow-lg border-b-4 border-[var(--cyan)] transition-all duration-700 delay-300 ${
+              card3.isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             <div className="w-16 h-16 bg-[var(--cyan)]/10 rounded-xl flex items-center justify-center mb-6">
               <FileText className="w-8 h-8 text-[var(--cyan)]" />
             </div>

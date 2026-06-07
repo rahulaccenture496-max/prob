@@ -1,9 +1,9 @@
-import { Activity, ArrowRight, FileSearch, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Activity, ArrowRight, FileSearch, AlertTriangle, CheckCircle2, ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-b from-[var(--cyan)]/5 to-white py-12 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="bg-gradient-to-b from-[var(--cyan)]/5 to-white min-h-screen flex items-center py-12 lg:py-20 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 bg-[var(--cyan)]/10 border border-[var(--cyan)]/20 px-4 py-2 rounded-full mb-6">
@@ -11,7 +11,7 @@ export default function Hero() {
               <span className="text-sm font-medium text-[var(--navy)]">AI-Powered Clinical Intelligence</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
               Healthcare Intelligence <br />
               <span className="text-[var(--cyan)]">for the Future of</span> <br />
               Clinical Care
@@ -22,14 +22,14 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button className="bg-[var(--navy)] text-white px-5 py-2.5 lg:px-6 lg:py-3 rounded-lg hover:bg-[var(--navy-dark)] transition-colors flex items-center justify-center gap-2 text-sm lg:text-base">
+              <a href="#request-demo" className="bg-[var(--navy)] text-white px-5 py-2.5 lg:px-6 lg:py-3 rounded-lg hover:bg-[var(--navy-dark)] transition-all duration-200 flex items-center justify-center gap-2 text-sm lg:text-base cursor-pointer">
                 Request Demo
                 <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="border-2 border-gray-300 text-gray-900 px-5 py-2.5 lg:px-6 lg:py-3 rounded-lg hover:border-gray-400 transition-colors flex items-center justify-center gap-2 text-sm lg:text-base">
+              </a>
+              <a href="#solutions" className="border-2 border-gray-300 text-gray-900 px-5 py-2.5 lg:px-6 lg:py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 flex items-center justify-center gap-2 text-sm lg:text-base cursor-pointer">
                 Explore Solutions
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -178,6 +178,12 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span className="text-sm text-gray-500">Scroll Down</span>
+        <ChevronDown className="w-6 h-6 text-[var(--cyan)]" />
       </div>
     </section>
   );

@@ -1,10 +1,20 @@
 import { Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function ProductDisplay() {
+  const container = useScrollAnimation();
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-12 shadow-2xl border border-gray-200">
+        <div
+          ref={container.elementRef}
+          className={`bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-12 shadow-2xl border border-gray-200 transition-all duration-700 ${
+            container.isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
             <div className="bg-gray-100 px-6 py-3 flex items-center gap-2 border-b border-gray-200">
               <div className="flex gap-1.5">
@@ -104,7 +114,7 @@ export default function ProductDisplay() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-[var(--navy)] text-white py-3 rounded-lg hover:bg-[var(--navy-dark)] transition-colors flex items-center justify-center gap-2">
+                  <button className="w-full bg-[var(--navy)] text-white py-3 rounded-lg hover:bg-[var(--navy-dark)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
                     Export Report
                     <ArrowRight className="w-4 h-4" />
                   </button>

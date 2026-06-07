@@ -1,11 +1,17 @@
-import { Upload, Brain, FileText, Send, Shield, Zap, Clock, TrendingUp, ChevronRight } from 'lucide-react';
+import { Upload, Brain, FileText, Send, Shield, Zap, ChevronRight } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function HowItWorks() {
+  const card1 = useScrollAnimation();
+  const card2 = useScrollAnimation();
+  const card3 = useScrollAnimation();
+  const card4 = useScrollAnimation();
+
   return (
     <section id="technology" className="py-20 bg-gradient-to-b from-white to-[var(--cyan)]/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block bg-[var(--cyan)]/10 border border-[var(--cyan)]/30 text-[var(--cyan)] text-sm font-semibold mb-4 uppercase tracking-wide px-4 py-2 rounded-full">
+          <div className="inline-block bg-[#0B1C2E] text-[var(--cyan)] text-sm font-semibold mb-4 uppercase tracking-wide px-4 py-2 rounded-full">
             HOW IT WORKS
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -20,7 +26,14 @@ export default function HowItWorks() {
           <div className="absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--cyan)] via-[var(--cyan)] to-[var(--cyan)] hidden lg:block" style={{ width: '75%', left: '12.5%' }}></div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div
+              ref={card1.elementRef}
+              className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 ${
+                card1.isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-[var(--cyan)] text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
                   01
@@ -53,7 +66,14 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div
+              ref={card2.elementRef}
+              className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 delay-150 ${
+                card2.isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-[var(--cyan)] text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
                   02
@@ -84,7 +104,14 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div
+              ref={card3.elementRef}
+              className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 delay-300 ${
+                card3.isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-[var(--cyan)] text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
                   03
@@ -127,7 +154,14 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div
+              ref={card4.elementRef}
+              className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 delay-[450ms] ${
+                card4.isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-[var(--cyan)] text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
                   04
@@ -181,40 +215,6 @@ export default function HowItWorks() {
                 Instant delivery & alerts
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-xl p-6 border-2 border-[var(--cyan)]/20 hover:border-[var(--cyan)] transition-colors">
-            <div className="w-12 h-12 bg-[var(--cyan)]/10 rounded-lg flex items-center justify-center mb-4">
-              <Shield className="w-6 h-6 text-[var(--cyan)]" />
-            </div>
-            <h4 className="font-bold text-gray-900 mb-2">Enterprise Ready</h4>
-            <p className="text-sm text-gray-600">Secure, reliable, and built for scale.</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 border-2 border-[var(--cyan)]/20 hover:border-[var(--cyan)] transition-colors">
-            <div className="w-12 h-12 bg-[var(--navy)]/10 rounded-lg flex items-center justify-center mb-4">
-              <Zap className="w-6 h-6 text-[var(--navy)]" />
-            </div>
-            <h4 className="font-bold text-gray-900 mb-2">Seamless Integration</h4>
-            <p className="text-sm text-gray-600">Works with PACS, RIS, EHRs and other systems.</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 border-2 border-[var(--cyan)]/20 hover:border-[var(--cyan)] transition-colors">
-            <div className="w-12 h-12 bg-[var(--cyan)]/10 rounded-lg flex items-center justify-center mb-4">
-              <Clock className="w-6 h-6 text-[var(--cyan)]" />
-            </div>
-            <h4 className="font-bold text-gray-900 mb-2">10 Seconds or Less</h4>
-            <p className="text-sm text-gray-600">From scan to structured report.</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 border-2 border-[var(--cyan)]/20 hover:border-[var(--cyan)] transition-colors">
-            <div className="w-12 h-12 bg-[var(--navy)]/10 rounded-lg flex items-center justify-center mb-4">
-              <TrendingUp className="w-6 h-6 text-[var(--navy)]" />
-            </div>
-            <h4 className="font-bold text-gray-900 mb-2">Continuous Learning</h4>
-            <p className="text-sm text-gray-600">Models improve continuously with more data.</p>
           </div>
         </div>
       </div>

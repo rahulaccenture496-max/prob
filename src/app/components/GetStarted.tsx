@@ -1,7 +1,10 @@
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function GetStarted() {
+  const formSection = useScrollAnimation();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -68,14 +71,14 @@ export default function GetStarted() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://probea.in/login"
-                className="bg-white text-[var(--navy)] px-8 py-3 rounded-lg hover:bg-gray-100 transition-all font-semibold flex items-center justify-center gap-2"
+                className="bg-white text-[var(--navy)] px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-200 font-semibold flex items-center justify-center gap-2 cursor-pointer"
               >
                 Sign In
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="#request-demo"
-                className="bg-[var(--cyan)] text-[var(--navy)] px-8 py-3 rounded-lg hover:bg-[var(--cyan-light)] transition-all font-semibold flex items-center justify-center gap-2"
+                className="bg-[var(--cyan)] text-[var(--navy)] px-8 py-3 rounded-lg hover:bg-[var(--cyan-light)] transition-all duration-200 font-semibold flex items-center justify-center gap-2 cursor-pointer"
               >
                 Request Demo
                 <ArrowRight className="w-5 h-5" />
@@ -88,7 +91,14 @@ export default function GetStarted() {
       {/* Section 2: Request Demo Form */}
       <section id="request-demo" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div
+            ref={formSection.elementRef}
+            className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${
+              formSection.isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             {/* Left Side - Info */}
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -222,7 +232,7 @@ export default function GetStarted() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[var(--navy)] text-white py-3.5 rounded-lg hover:bg-[var(--navy-dark)] transition-all font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-[var(--navy)] text-white py-3.5 rounded-lg hover:bg-[var(--navy-dark)] transition-all duration-200 font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                     >
                       {isSubmitting ? 'Submitting...' : 'Request Demo'}
                       <ArrowRight className="w-5 h-5" />
